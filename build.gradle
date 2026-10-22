@@ -123,7 +123,8 @@ spotless {
         importOrder 'java', 'javax', 'org', 'com'
         licenseHeaderFile 'spotless.license.java'
 
-        eclipse().configFile rootProject.file('.eclipseformat.xml')
+        //eclipse().configFile rootProject.file('.eclipseformat.xml')
+        eclipse('4.29').withP2Mirrors(Map.of("https://download.eclipse.org/", "https://ci.opensearch.org/")).configFile rootProject.file('.eclipseformat.xml')
     }
 }
 
